@@ -1,4 +1,4 @@
-> Essential math utils, extracted from [p5.Math.js](https://github.com/trembl/p5.Math.js/blob/master/p5.Math.js)
+> Essential math utils, extracted from [p5.Math.js](https://github.com/trembl/p5.Math.js)
 
 ### Setup
 ```sh
