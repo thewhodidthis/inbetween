@@ -2,45 +2,62 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const TAU = 2 * Math.PI;
+var TAU = 2 * Math.PI;
 
-const RAD = 360 / TAU;
-const DEG = TAU / 360;
+var RAD = 360 / TAU;
+var DEG = TAU / 360;
 
 // Convert radians to degrees
-const deg = x => x * RAD;
+var deg = function (x) { return x * RAD; };
 
 // Convert degrees to radians
-const rad = x => x * DEG;
+var rad = function (x) { return x * DEG; };
 
-// Translate values from one coordinate space to another
-const map = (v, x1, x2, y1, y2) => y1 + ((y2 - y1) * (v - x1) / (x2 - x1));
+// Linear interpolator
+var lerp = function (v, x1, x2) {
+	if ( x1 === void 0 ) x1 = 0;
+	if ( x2 === void 0 ) x2 = 1;
 
-// Self multiply
-const sq = (x = 0) => x * x;
-
-// Calculate hypotenuse
-const mag = (x = 0, y = 0) => Math.sqrt(sq(x) + sq(y));
-
-// Calculate distance between two points
-const dist = (x1, y1, x2, y2) => mag(x2 - x1, y2 - y1);
-
-// Linear interpolate
-const lerp = (v, x1 = 0, x2 = 1) => x1 + ((x2 - x1) * v);
+	return x1 + ((x2 - x1) * v);
+};
 
 // Normalize values between 0 and 1
-const norm = (v, x1 = 0, x2 = 1) => (v - x1) / (x2 - x1);
+var norm = function (v, x1, x2) {
+	if ( x1 === void 0 ) x1 = 0;
+	if ( x2 === void 0 ) x2 = 1;
+
+	return (v - x1) / (x2 - x1);
+};
+
+// Translate values from one coordinate space to another
+var cast = function (v, x1, x2, y1, y2) { return lerp(norm(v, x1, x2), y1, y2); };
 
 // Constrain values within range
-const curb = (x, lo = 0, hi = 0) => (x < lo ? lo : (x > hi ? hi : x));
+var curb = function (x, lo, hi) {
+	if ( lo === void 0 ) lo = 0;
+	if ( hi === void 0 ) hi = 0;
+
+	return (x < lo ? lo : (x > hi ? hi : x));
+};
+
+// Get random integer in range, hi exclusive, lo inclusive
+var rand = function (hi, lo) {
+	if ( hi === void 0 ) hi = 0;
+	if ( lo === void 0 ) lo = 0;
+
+	return Math.floor((Math.random() * (hi - lo))) + lo;
+};
+
+// Calculate distance between two points
+var dist = function (x1, y1, x2, y2) { return Math.hypot(x2 - x1, y2 - y1); };
 
 exports.TAU = TAU;
 exports.deg = deg;
 exports.rad = rad;
-exports.map = map;
-exports.sq = sq;
-exports.mag = mag;
-exports.dist = dist;
 exports.lerp = lerp;
 exports.norm = norm;
+exports.cast = cast;
 exports.curb = curb;
+exports.rand = rand;
+exports.dist = dist;
+
