@@ -1,11 +1,11 @@
 'use strict'
 
 const { equal } = require('tapeless')
-const { curb, map, lerp, dist, mag, deg, rad, norm, sq } = require('./')
+const { curb, lerp, dist, norm, cast, deg, rad } = require('./')
 
-const t1 = map(0, 0, 100, 0, 1)
-const t2 = map(1, 0, 100, 0, 1)
-const t3 = map(-1, 0, 100, 0, 1)
+const t1 = cast(0, 0, 100, 0, 1)
+const t2 = cast(1, 0, 100, 0, 1)
+const t3 = cast(-1, 0, 100, 0, 1)
 
 equal(t1, 0)
 equal(t2, 0.01)
@@ -27,28 +27,20 @@ equal(t7, 0.5)
 equal(t8, 0)
 equal(t9, 0)
 
-const t10 = sq(2)
+const t10 = rad(90)
 
-equal(t10, Math.pow(2, 2))
+equal(t10, 0.5 * Math.PI)
 
-const t11 = rad(90)
+const t11 = deg(0.5 * Math.PI)
 
-equal(t11, 0.5 * Math.PI)
+equal(t11, 90)
 
-const t12 = deg(0.5 * Math.PI)
+const t12 = lerp(0.5, 0, 2)
 
-equal(t12, 90)
+equal(t12, 1)
 
-const t13 = lerp(0.5, 0, 2)
+const t13 = dist(0, 0, 0, 1)
+const t14 = dist(0, 1, 0, 1)
 
 equal(t13, 1)
-
-const t14 = mag(3, 4)
-
-equal(t14, 5)
-
-const t15 = dist(0, 0, 0, 1)
-const t16 = dist(0, 1, 0, 1)
-
-equal(t15, 1)
-equal(t16, 0)
+equal(t14, 0)
