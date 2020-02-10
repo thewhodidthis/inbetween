@@ -69,7 +69,7 @@ const noiz = (d1, d2, d3) => {
   const ba = feed[b] + cube.z
   const bb = feed[b + 1] + cube.z
 
-  /* eslint indent: 1 */
+  /* eslint indent: 0 */
   return lerp(w, lerp(v, lerp(u, grad(feed[aa], dx, dy, dz),
                                  grad(feed[ba], dx - 1, dy, dz)),
                          lerp(u, grad(feed[ab], dx, dy - 1, dz),
