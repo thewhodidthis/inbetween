@@ -2,42 +2,42 @@
   "name": "@thewhodidthis/arithmetics",
   "version": "0.0.3",
   "description": "Helps with basic math",
-  "main": "index",
-  "module": "index.mjs",
-  "homepage": "https://github.com/thewhodidthis/arithmetics#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thewhodidthis/arithmetics.git"
-  },
-  "bugs": {
-    "url": "https://github.com/thewhodidthis/arithmetics/issues"
-  },
-  "scripts": {
-    "pretest": "eslint test.js",
-    "test": "node test",
-    "prestart": "eslint index.mjs",
-    "start": "rollup -f cjs index.mjs > index.js",
-    "preexample": "eslint example.js",
-    "example": "node example"
-  },
-  "eslintConfig": {
-    "extends": "@thewhodidthis"
-  },
-  "engines": {
-    "node": ">=6.11.0",
-    "npm": ">=3.10.10"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "@thewhodidthis/eslint-config": "^0.0.11",
-    "eslint": "^6.8.0",
-    "rollup": "^1.31.0",
-    "tapeless": "^0.0.7"
-  },
   "keywords": [
     "math",
     "trigonometry"
   ],
+  "homepage": "https://github.com/thewhodidthis/arithmetics#readme",
+  "bugs": {
+    "url": "https://github.com/thewhodidthis/arithmetics/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thewhodidthis/arithmetics.git"
+  },
+  "license": "Unlicense",
   "author": "sChzs BkgNns <sotirios.bakagiannis@gmail.com> (https://www.thewhodidthis.com)",
-  "license": "Unlicense"
+  "main": "index",
+  "module": "index.mjs",
+  "scripts": {
+    "preexample": "eslint example.js",
+    "example": "node example",
+    "prestart": "eslint index.mjs",
+    "start": "rollup -f cjs index.mjs > index.js",
+    "pretest": "eslint test.js",
+    "test": "node test",
+    "posttest": "eslint package.json"
+  },
+  "eslintConfig": {
+    "extends": "@thewhodidthis"
+  },
+  "devDependencies": {
+    "@thewhodidthis/eslint-config": "^0.0.15",
+    "eslint": "^6.8.0",
+    "rollup": "^1.31.1",
+    "tapeless": "^0.0.7"
+  },
+  "engines": {
+    "node": ">=6.11.0",
+    "npm": ">=3.10.10"
+  }
 }
