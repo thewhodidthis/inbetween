@@ -13,9 +13,11 @@ equal
   .test(t3, -1 * t2)
 
 const t4 = norm(50, 0, 100)
+const t12 = lerp(0.5, 0, 2)
 
 equal
   .test(t4, 0.5)
+  .test(t12, 1)
 
 const t5 = curb(-1, -1, 1)
 const t6 = curb(2, 0, 1)
@@ -31,19 +33,11 @@ equal
   .test(t9, 0)
 
 const t10 = rad(90)
-
-equal
-  .test(t10, 0.5 * Math.PI)
-
 const t11 = deg(0.5 * Math.PI)
 
 equal
+  .test(t10, 0.5 * Math.PI)
   .test(t11, 90)
-
-const t12 = lerp(0.5, 0, 2)
-
-equal
-  .test(t12, 1)
 
 const t13 = dist(0, 0, 0, 1)
 const t14 = dist(0, 1, 0, 1)
