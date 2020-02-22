@@ -32,11 +32,11 @@ const rand = (hi = 0, lo = 0) => Math.floor((Math.random() * (hi - lo))) + lo;
 const dist = (x1, y1, x2, y2) => Math.hypot(x2 - x1, y2 - y1);
 
 exports.TAU = TAU;
-exports.deg = deg;
-exports.rad = rad;
-exports.lerp = lerp;
-exports.norm = norm;
 exports.cast = cast;
 exports.curb = curb;
-exports.rand = rand;
+exports.deg = deg;
 exports.dist = dist;
+exports.lerp = lerp;
+exports.norm = norm;
+exports.rad = rad;
+exports.rand = rand;
