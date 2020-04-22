@@ -25,8 +25,11 @@ const cast = (v, x1, x2, y1, y2) => lerp(norm(v, x1, x2), y1, y2);
 // Constrain values within range
 const curb = (x, lo = 0, hi = 0) => (x < lo ? lo : (x > hi ? hi : x));
 
-// Get random integer in range, hi exclusive, lo inclusive
-const rand = (hi = 0, lo = 0) => Math.floor((Math.random() * (hi - lo))) + lo;
+// Get arbitrary random number in range, hi exclusive, lo inclusive
+const randF = (hi = 0, lo = 0) => (Math.random() * (hi - lo)) + lo;
+
+// Get random integer as above
+const rand = (...args) => Math.floor(randF(...args));
 
 // Calculate distance between two points
 const dist = (x1, y1, x2, y2) => Math.hypot(x2 - x1, y2 - y1);
@@ -40,3 +43,4 @@ exports.lerp = lerp;
 exports.norm = norm;
 exports.rad = rad;
 exports.rand = rand;
+exports.randF = randF;
