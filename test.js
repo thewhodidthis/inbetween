@@ -1,7 +1,7 @@
 'use strict'
 
-const { equal } = require('tapeless')
-const { curb, lerp, dist, norm, cast, deg, rad } = require('./')
+const { equal, ok } = require('tapeless')
+const { curb, lerp, dist, norm, cast, deg, rad, rand, randF } = require('./')
 
 const t1 = cast(0, 0, 100, 0, 1)
 const t2 = cast(1, 0, 100, 0, 1)
@@ -45,3 +45,19 @@ const t14 = dist(0, 1, 0, 1)
 equal
   .test(t13, 1)
   .test(t14, 0)
+
+const randomIntMaybe = rand(1, 2)
+
+ok
+  .test(Number(randomIntMaybe))
+  .test((randomIntMaybe % 1) === 0)
+  .test(randomIntMaybe >= 1)
+  .test(randomIntMaybe < 2)
+
+const randomFloat = randF(1, 2)
+
+ok
+  .test(Number(randomFloat))
+  .test((randomFloat % 1) !== 0)
+  .test(randomFloat >= 1)
+  .test(randomFloat < 2)
