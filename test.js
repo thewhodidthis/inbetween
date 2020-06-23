@@ -46,13 +46,13 @@ equal
   .test(t13, 1)
   .test(t14, 0)
 
-const randomIntMaybe = rand(1, 2)
+const randomInt = rand(1, 2)
 
 ok
-  .test(Number(randomIntMaybe))
-  .test((randomIntMaybe % 1) === 0)
-  .test(randomIntMaybe >= 1)
-  .test(randomIntMaybe < 2)
+  .test(Number(randomInt))
+  .test((randomInt % 1) === 0)
+  .test(randomInt >= 1)
+  .test(randomInt < 2)
 
 const randomFloat = randF(1, 2)
 
