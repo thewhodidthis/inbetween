@@ -1,18 +1,19 @@
 ## about
 
-Essential math utilties to help with animating.
+Essential math utils to help with animating.
 
 ## setup
 
-Fetch latest from GitHub:
+Find the [latest version](https://npm.im/arithmetics) on the _npm_ registry:
 
 ```sh
-npm install thewhodidthis/arithmetics
+# Add to 'package.json'
+npm install @thewhodidthis/arithmetics
 ```
 
 ## usage
 
-Expect named exports for each utility function and a constant for `TAU`. For example,
+Expect named exports for each function and a constant for `TAU` as for example,
 
 ```js
 import * as math from '@thewhodidthis/arithmetics'
