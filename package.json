@@ -31,10 +31,10 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@thewhodidthis/eslint-config": "^0.1.6",
+    "@thewhodidthis/eslint-config": "^0.1.7",
     "eslint": "^7.3.1",
-    "rollup": "^2.18.0",
-    "tapeless": "^0.0.11"
+    "rollup": "^2.18.1",
+    "tapeless": "^1.0.3"
   },
   "engines": {
     "node": ">=6.11.0",
