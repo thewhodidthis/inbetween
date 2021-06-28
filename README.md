@@ -4,10 +4,10 @@ Essential math utils to help with animating.
 
 ## setup
 
-Find the [latest version](https://npm.im/arithmetics) on the _npm_ registry:
+Download from the the _npm_ registry:
 
 ```sh
-# Add to 'package.json'
+# Add to package.json
 npm install @thewhodidthis/arithmetics
 ```
 
@@ -16,7 +16,7 @@ npm install @thewhodidthis/arithmetics
 Expect named exports for each function and a constant for `TAU` as for example,
 
 ```js
-import * as math from '@thewhodidthis/arithmetics'
+import * as math from "@thewhodidthis/arithmetics"
 
 const degrees = math.deg(math.TAU)
 console.assert(degrees, 360)
