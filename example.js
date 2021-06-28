@@ -1,7 +1,5 @@
-'use strict'
-
-const assert = require('assert')
-const { lerp } = require('./')
+import assert from 'assert'
+import { lerp } from './main.js'
 
 // Adapted from
 // http://mrl.nyu.edu/~perlin/noise/

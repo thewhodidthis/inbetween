@@ -1,7 +1,7 @@
-'use strict'
+import { assert, report } from 'tapeless'
+import { curb, lerp, dist, norm, cast, deg, rad, rand, randF } from './main.js'
 
-const { equal, ok } = require('tapeless')
-const { curb, lerp, dist, norm, cast, deg, rad, rand, randF } = require('./')
+const { equal, ok } = assert
 
 const t1 = cast(0, 0, 100, 0, 1)
 const t2 = cast(1, 0, 100, 0, 1)
@@ -61,3 +61,5 @@ ok
   .test((randomFloat % 1) !== 0)
   .test(randomFloat >= 1)
   .test(randomFloat < 2)
+
+report()
