@@ -1,8 +1,9 @@
-import assert from 'assert'
-import { lerp } from './main.js'
+import assert from "assert"
+import { lerp } from "./main.js"
 
 // Adapted from
 // http://mrl.nyu.edu/~perlin/noise/
+// dprint-ignore
 const data = [
   151, 160, 137, 91, 90, 15, 131, 13, 201, 95, 96, 53, 194, 233, 7, 225,
   140, 36, 103, 30, 69, 142, 8, 99, 37, 240, 21, 10, 23, 190, 6, 148,
@@ -68,14 +69,19 @@ const noiz = (d1, d2, d3) => {
   const bb = feed[b + 1] + cube.z
 
   /* eslint indent: 0 */
-  return lerp(w, lerp(v, lerp(u, grad(feed[aa], dx, dy, dz),
-                                 grad(feed[ba], dx - 1, dy, dz)),
-                         lerp(u, grad(feed[ab], dx, dy - 1, dz),
-                                 grad(feed[bb], dx - 1, dy - 1, dz))),
-                 lerp(v, lerp(u, grad(feed[aa + 1], dx, dy, dz - 1),
-                                 grad(feed[ba + 1], dx - 1, dy, dz - 1)),
-                         lerp(u, grad(feed[ab + 1], dx, dy - 1, dz - 1),
-                                 grad(feed[bb + 1], dx - 1, dy - 1, dz - 1))))
+  return lerp(
+    w,
+    lerp(
+      v,
+      lerp(u, grad(feed[aa], dx, dy, dz), grad(feed[ba], dx - 1, dy, dz)),
+      lerp(u, grad(feed[ab], dx, dy - 1, dz), grad(feed[bb], dx - 1, dy - 1, dz)),
+    ),
+    lerp(
+      v,
+      lerp(u, grad(feed[aa + 1], dx, dy, dz - 1), grad(feed[ba + 1], dx - 1, dy, dz - 1)),
+      lerp(u, grad(feed[ab + 1], dx, dy - 1, dz - 1), grad(feed[bb + 1], dx - 1, dy - 1, dz - 1)),
+    ),
+  )
 }
 
 assert.equal(noiz(3.14, 42, 7), 0.13691995878400012)

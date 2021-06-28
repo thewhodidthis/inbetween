@@ -1,5 +1,5 @@
-import { assert, report } from 'tapeless'
-import { curb, lerp, dist, norm, cast, deg, rad, rand, randF } from './main.js'
+import { assert, report } from "tapeless"
+import { cast, curb, deg, dist, lerp, norm, rad, rand, randF } from "./main.js"
 
 const { equal, ok } = assert
 
